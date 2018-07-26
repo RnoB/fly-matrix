@@ -168,8 +168,8 @@ class MyExperiment(object):
                 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 print(t)       
-                output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
-
+                #output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
+                time.sleep(0.005)
 
     def updateStimuli(self,nStimuli):
         # establish a connecttion to the project database
