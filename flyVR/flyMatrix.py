@@ -90,7 +90,7 @@ def masterControl():
 
 def main():
     
-
+    global expThread
 
     statusThread = threading.Thread(target = matrixNet.giveStatus, args=(matrixIP.flyVRIP,))
     statusThread.daemon = True
