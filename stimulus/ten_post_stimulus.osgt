@@ -238,7 +238,7 @@ osg::Group {
     }
     osg::MatrixTransform {
       UniqueID 24
-      Name "Empty"
+      Name "Root"
       Children 10 {
         osg::MatrixTransform {
           UniqueID 26
