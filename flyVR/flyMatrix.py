@@ -8,6 +8,8 @@ import struct
 running = True
 expTime = 90
 
+expThread = []
+
 
 def killExperiment():
 
@@ -16,6 +18,7 @@ def killExperiment():
 
 
 def masterControl():
+    global expThread
     state = 'waiting'
     backlog = 1  
     maxsize = 28
@@ -46,11 +49,13 @@ def masterControl():
             data = struct.pack('i', code+1)
             t0 = time.time()
             try:
-                
-                expThread = threading.Thread(target = flyStarter.startFly)
-                expThread.daemon = True
-                expThread.start()
-                print('here')
+                if len(expThread) > 0:
+                    print('already running')
+                else:
+                    expThread.append(threading.Thread(target = flyStarter.startFly))
+                    expThread[-1].daemon = True
+                    expThread[-1].start()
+                    print('here')
                 connection.sendall(data)
 
             except:
@@ -85,7 +90,7 @@ def masterControl():
 
 def main():
     
-
+    global expThread
 
     statusThread = threading.Thread(target = matrixNet.giveStatus, args=(matrixIP.flyVRIP,))
     statusThread.daemon = True
@@ -96,11 +101,15 @@ def main():
     masterThread.start()
 
     t0 = time.time()
-
     while running:
         t = time.time()-t0
-        time.sleep(3600)
-        print(">>>>>>>>>>>> the FlyMatrix is in service since " + str(int(t/3600)) +" hours")
+        time.sleep(60)
+        if len(expThread)>0:
+            expThread[-1].join()
+            expThread = []
+        if int(t/60) % 60 == 0:
+
+            print(">>>>>>>>>>>> the FlyMatrix is in service since " + str(int(t/3600)) +" hours")
 
 
 

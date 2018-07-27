@@ -130,9 +130,9 @@ class MyExperiment(object):
             cursorProject.execute("Select tSwitch from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             fetched = cursorProject.fetchall()
             print('fetched : ' + str(fetched))
-            self.tSwitch = 1.0/5.0#np.unique(fetched)
+            self.tSwitch = 200/5.0#np.unique(fetched)
             cursorProject.execute("Select tExp from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
-            self.tExp = 1.0#np.unique(cursorProject.fetchall())  
+            self.tExp = 2.0#np.unique(cursorProject.fetchall())  
             self.dateStart = datetime.datetime.now()      
         else:
             tExp = 0
@@ -170,9 +170,9 @@ class MyExperiment(object):
                     self.updateStimuli(nStimuli)
                 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
-                       
-                output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
-
+                print(t)       
+                #output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
+                time.sleep(0.005)
 
     def updateStimuli(self,nStimuli):
         # establish a connecttion to the project database
