@@ -6,7 +6,7 @@ import subprocess
 running = True
 runDisplay = "flyvr-run-display-server"
 
-runStimuli = "/home/flyvr/flyvr/examples/flyvr.py"
+runStimuli = "/home/flyvr/flyvr/fly-matrix/flyVR/flyvr.py"
 
 runTracker = "python /home/flyvr/flyvr/scripts/flyvr-tethered-orientation-tracker.py --config-raw \"{capture: {configuration: {ExposureTime: 9000, ExposureAuto: 'Off'}}}\" pylon:"
 
