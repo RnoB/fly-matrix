@@ -83,7 +83,7 @@ class MyExperiment(object):
         y = -kwargs.get('y')
         z = -kwargs.get('z')
 
-        self.ds_proxy.move_node('Root', x + self.rootPosition[0,0], y + self.rootPosition[0,1], 0)
+        self.ds_proxy.move_node('Root', x , y , 0)
         #for n in range(0,10):
             #self.ds_proxy.move_node('Cylinder' + str(n), x + self.postPosition[n,0], y + self.postPosition[n,1], 0)
 
@@ -152,6 +152,7 @@ class MyExperiment(object):
         running = True
         nStimuli = 0
         t0 = time.time()
+        cnt = 0
 
         # write output file in specified directory
         path = pathDefine(pathData,self.expId)
@@ -170,9 +171,10 @@ class MyExperiment(object):
                     self.updateStimuli(nStimuli)
                 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
-                  
+                #print(t)  
                 #output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
                 time.sleep(0.005)
+                ++cnt
 
     def updateStimuli(self,nStimuli):
         # establish a connecttion to the project database
@@ -191,7 +193,9 @@ class MyExperiment(object):
                 #Should be the name of the blender file
                 self.postPosition[nPost,:] = [1000,1000]
             else:
+                print(eval(data)['position'])
                 self.postPosition[nPost,:] = eval(data)['position']
+            self.ds_proxy.move_node('Cylinder' + str(nPost), self.postPosition[nPost,0],  self.postPosition[nPost,1], 0)
             #print(self.postPosition)
         
         # close connection
