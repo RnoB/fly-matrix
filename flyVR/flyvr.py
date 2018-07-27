@@ -57,9 +57,11 @@ class MyExperiment(object):
         self.tExp = 0
         self.dateStart = ''
 
+        # set starting position for stimuli
+        self.rootPosition = np.zeros((1,2))
         self.postPosition = np.zeros((numberPost,2))
 
-        # starting position of fly
+        # set starting position of fly
         self.start_position = {'x': 0.0, 'y': 0.0, 'z': -0.07}
         self.ds_proxy.set_position(**self.start_position)
 
@@ -81,8 +83,9 @@ class MyExperiment(object):
         y = -kwargs.get('y')
         z = -kwargs.get('z')
 
-        for n in range(0,10):
-            self.ds_proxy.move_node('Cylinder' + str(n), x + self.postPosition[n,0], y + self.postPosition[n,1], 0)
+        self.ds_proxy.move_node('Root', x + self.rootPosition[0,0], y + self.rootPosition[0,1], 0)
+        #for n in range(0,10):
+            #self.ds_proxy.move_node('Cylinder' + str(n), x + self.postPosition[n,0], y + self.postPosition[n,1], 0)
 
 
     def getExperiment(self):
@@ -219,7 +222,7 @@ class MyExperiment(object):
 
 def main():
     # OSGT files need to be in /home/flyvr/flyvr/FreemooVR/data
-    ex = MyExperiment(osg_file='stimulus.osgt')
+    ex = MyExperiment(osg_file='ten_post_stimulus.osgt')
 
     try:
         ex.experiment_start()
