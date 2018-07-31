@@ -152,7 +152,6 @@ class MyExperiment(object):
         running = True
         nStimuli = 0
         t0 = time.time()
-        cnt = 0
 
         # write output file in specified directory
         path = pathDefine(pathData,self.expId)
@@ -174,7 +173,7 @@ class MyExperiment(object):
                 #print(t)  
                 #output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
                 time.sleep(0.005)
-                ++cnt
+
 
     def updateStimuli(self,nStimuli):
         # establish a connecttion to the project database
