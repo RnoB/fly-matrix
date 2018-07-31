@@ -66,14 +66,14 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 		for k in range(0,nSwitch-1):
 			data.append([])
 			N = np.random.randint(2)+2
-			start_ang = 2*np.pi / (np.random.randint(9)+1)
+			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			for j in range(0,nPosts):
 				if j < N:
 					r = d
-					theta = start_ang + j*2*np.pi*ang / (N*9)
+					theta = start_ang + j*2*np.pi*ang / (N*6)
 					x = r*np.cos(theta)
 					y = r*np.sin(theta)
-					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*9)}
+					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
 				else:
 					dataStimuli = 'None'
 				data[-1].append(str(dataStimuli))
@@ -89,14 +89,14 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 		data = []
 		for k in range(0,nSwitch-1):
 			data.append([])
-			start_ang = 2*np.pi / (np.random.randint(9)+1)
+			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6 
 			for j in range(0,nPosts):
 				if j < N:
 					r = np.random.choice(distances)
-					theta = start_ang + j*2*np.pi*ang / (N*9)
+					theta = start_ang + j*2*np.pi*ang / (N*6)
 					x = r*np.cos(theta)
 					y = r*np.sin(theta)
-					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*9)}
+					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
 				else:
 					dataStimuli = 'None'
 				data[-1].append(str(dataStimuli))
@@ -112,15 +112,15 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 		data = []
 		for k in range(0,nSwitch-1):
 			data.append([])
-			start_ang = 2*np.pi / (np.random.randint(9)+1)
-			ang = np.random.randint(9)+1
+			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6 
+			ang = np.random.randint(6)+1
 			for j in range(0,nPosts):
 				if j < N:
 					r = d
-					theta = start_ang + j*2*np.pi*ang / (N*9)
+					theta = start_ang + j*2*np.pi*ang / (N*6)
 					x = r*np.cos(theta)
 					y = r*np.sin(theta)
-					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*9)}
+					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
 				else:
 					dataStimuli = 'None'
 				data[-1].append(str(dataStimuli))
@@ -179,13 +179,13 @@ def main():
 
 	if expType == 'nPosts':
 		for d in distances:
-			for ang in range(1,10):
+			for ang in range(1,7):
 				# write your new stimuli
 				exp += 1
 				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 	if expType == 'distances':
-		for ang in range(1,10):	
+		for ang in range(1,7):	
 			for N in range(2,4):
 				# write your new stimuli
 				exp += 1
