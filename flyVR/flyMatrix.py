@@ -107,6 +107,10 @@ def main():
         if len(expThread)>0:
             expThread[-1].join()
             expThread = []
+            try:
+                emailer.twitStatus('',status = 3)
+            except:
+                pass
         if int(t/60) % 60 == 0:
 
             print(">>>>>>>>>>>> the FlyMatrix is in service since " + str(int(t/3600)) +" hours")
