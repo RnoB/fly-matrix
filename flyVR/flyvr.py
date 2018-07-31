@@ -163,7 +163,7 @@ class MyExperiment(object):
                 pos = self.observer.position
                 t = time.time() - t0
 
-                if t > self.tExp*60*.9 && lastMessage:
+                if t > self.tExp*60*.9 and lastMessage:
                     running = False
                     self.writeInDb()
                     try:
