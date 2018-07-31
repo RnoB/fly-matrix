@@ -12,6 +12,7 @@ import numpy as np
 from shutil import copyfile
 from tetheredvr.proxy import JSONStimulusOSGController
 from tetheredvr.observers import SimulatedObserver, CarModelSocketObserver
+import emailer
 
 replication = 4
 
@@ -71,6 +72,7 @@ class MyExperiment(object):
         self.getExperiment()
         # start every experiment with a no post condition
         self.updateStimuli(0)
+        emailer.twitStatus(self.expId,status = 0, t=self.tExp)
 
 
     def _observer_callback(self, info_dict):
@@ -153,7 +155,7 @@ class MyExperiment(object):
         nStimuli = 0
         t0 = time.time()
         cnt = 0
-
+        lastMessage = True
         # write output file in specified directory
         path = pathDefine(pathData,self.expId)
         with open(path+'/results.csv', 'w') as output:
@@ -161,9 +163,22 @@ class MyExperiment(object):
                 pos = self.observer.position
                 t = time.time() - t0
 
+                if t > self.tExp*60*.9 && lastMessage:
+                    running = False
+                    self.writeInDb()
+                    try:
+                        emailer.twitStatus(self.expId,status = 1, t=self.tExp*.1)
+                    except:
+                        pass
+                    lastMessage = False
+
                 if t > self.tExp*60:
                     running = False
                     self.writeInDb()
+                    try:
+                        emailer.twitStatus(self.expId,status = 2, t=self.tExp)
+                    except:
+                        pass
                 
                 elif t > (nStimuli+1)*self.tSwitch*60:
                     nStimuli = nStimuli+1

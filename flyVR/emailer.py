@@ -30,7 +30,7 @@ def twitStatus(expId,status = 0, t=0,filename=''):
             
         elif status == 3:
             #media = api.upload_chunked(filename)
-            message = "the experiment " + str(expId) + " has now been uploaded. The Fly Matrix is ready to serve."
+            message = "The Fly Matrix is ready to serve."
             
         api.update_status(message)    
     except ValueError:
