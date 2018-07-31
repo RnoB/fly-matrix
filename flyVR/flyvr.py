@@ -73,7 +73,7 @@ class MyExperiment(object):
         # start every experiment with a no post condition
         self.updateStimuli(0)
         emailer.twitStatus(self.expId,status = 0, t=self.tExp)
-        self.running =true
+        self.running =True
 
 
     def _observer_callback(self, info_dict):
@@ -152,7 +152,7 @@ class MyExperiment(object):
 
 
     def loop(self):
-        self.running
+        
         nStimuli = 0
         t0 = time.time()
         
@@ -176,8 +176,8 @@ class MyExperiment(object):
                 if t > self.tExp*60:
                     self.running = False
                     self.writeInDb()
-                    
                     emailer.twitStatus(self.expId,status = 2, t=self.tExp)
+                    
                     
                 
                 elif t > (nStimuli+1)*self.tSwitch*60:
