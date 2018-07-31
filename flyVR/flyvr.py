@@ -155,7 +155,6 @@ class MyExperiment(object):
         nStimuli = 0
         t0 = time.time()
         
-        cnt = 0
         lastMessage = True
 
         # write output file in specified directory
