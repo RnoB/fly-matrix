@@ -73,6 +73,7 @@ class MyExperiment(object):
         # start every experiment with a no post condition
         self.updateStimuli(0)
         emailer.twitStatus(self.expId,status = 0, t=self.tExp)
+        self.running =true
 
 
     def _observer_callback(self, info_dict):
@@ -132,7 +133,7 @@ class MyExperiment(object):
             cursorProject.execute("Select tSwitch from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             fetched = cursorProject.fetchall()
             print('fetched : ' + str(fetched))
-            self.tSwitch = 1/5.0#np.unique(fetched)
+            self.tSwitch = 1.0/5.0#np.unique(fetched)
             cursorProject.execute("Select tExp from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             self.tExp = 1.0#np.unique(cursorProject.fetchall())  
             self.dateStart = datetime.datetime.now()      
@@ -151,7 +152,7 @@ class MyExperiment(object):
 
 
     def loop(self):
-        running = True
+        self.running
         nStimuli = 0
         t0 = time.time()
         
@@ -161,13 +162,12 @@ class MyExperiment(object):
         # write output file in specified directory
         path = pathDefine(pathData,self.expId)
         with open(path+'/results.csv', 'w') as output:
-            while running:
+            while self.running:
                 pos = self.observer.position
                 t = time.time() - t0
 
                 if t > self.tExp*60*.9 and lastMessage:
-                    running = False
-                    self.writeInDb()
+
                     try:
                         emailer.twitStatus(self.expId,status = 1, t=self.tExp*.1)
                     except:
@@ -175,12 +175,11 @@ class MyExperiment(object):
                     lastMessage = False
 
                 if t > self.tExp*60:
-                    running = False
+                    self.running = False
                     self.writeInDb()
-                    try:
-                        emailer.twitStatus(self.expId,status = 2, t=self.tExp)
-                    except:
-                        pass
+                    
+                    emailer.twitStatus(self.expId,status = 2, t=self.tExp)
+                    
                 
                 elif t > (nStimuli+1)*self.tSwitch*60:
                     nStimuli = nStimuli+1
