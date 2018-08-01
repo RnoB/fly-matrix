@@ -40,6 +40,13 @@ def pathDefine(path,ids, params=[]):
 
 
 
+
+def distance(pos0, pos1):
+	dx = pos0['x'] - pos1[0]
+	dy = pos0['1'] - pos1[1]
+	return math.sqrt(dx**2 + dy**2)
+
+
 # Main Function
 class MyExperiment(object):
 
@@ -165,6 +172,10 @@ class MyExperiment(object):
                 pos = self.observer.position
                 t = time.time() - t0
 
+                for nPost in range(0,10):
+                	if distance(pos, self.postPosition[nPost,:]) < 0.05:
+                		self.observer.reset_to(**self.start_position)
+
                 if t > self.tExp*60*.9 and lastMessage:
 
                     try:
@@ -176,10 +187,7 @@ class MyExperiment(object):
                 if t > self.tExp*60:
                     self.running = False
                     self.writeInDb()
-                    emailer.twitStatus(self.expId,status = 2, t=self.tExp)
-                    
-                    
-                
+                    emailer.twitStatus(self.expId,status = 2, t=self.tExp)                   
                 elif t > (nStimuli+1)*self.tSwitch*60:
                     nStimuli = nStimuli+1
                     self.observer.reset_to(**self.start_position)
