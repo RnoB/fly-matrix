@@ -173,7 +173,7 @@ class MyExperiment(object):
                 t = time.time() - t0
 
                 for nPost in range(0,10):
-                	if distance(pos, self.postPosition[nPost,:]) < 0.05:
+                	if distance(pos, self.postPosition[nPost,:]) < 0.1:
                 		self.observer.reset_to(**self.start_position)
 
                 if t > self.tExp*60*.9 and lastMessage:
