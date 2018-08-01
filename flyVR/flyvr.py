@@ -42,13 +42,14 @@ def pathDefine(path,ids, params=[]):
 
 
 def distance(pos0, pos1, post):
-	dx = pos0['x'] - pos1[0]
-	if post == True:
-		dy = pos0['y'] - pos1[1]
-	else:
-		dy = pos0['y'] - pos1['y']
+    if post == True:
+        dx = pos0['x'] - pos1[0]
+        dy = pos0['y'] - pos1[1]
+    else:
+        dx = pos0['x'] - pos1['x']
+        dy = pos0['y'] - pos1['y']
 
-	return math.sqrt(dx**2 + dy**2)
+    return math.sqrt(dx**2 + dy**2)
 
 
 # Main Function
@@ -146,9 +147,9 @@ class MyExperiment(object):
             cursorProject.execute("Select tSwitch from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             fetched = cursorProject.fetchall()
             print('fetched : ' + str(fetched))
-            self.tSwitch = 1.0/5.0#np.unique(fetched)
+            self.tSwitch = np.unique(fetched)
             cursorProject.execute("Select tExp from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
-            self.tExp = 1.0#np.unique(cursorProject.fetchall())  
+            self.tExp = np.unique(cursorProject.fetchall())  
             self.dateStart = datetime.datetime.now()      
         else:
             tExp = 0
@@ -178,15 +179,6 @@ class MyExperiment(object):
                 pos = self.observer.position
                 t = time.time() - t0
 
-                for nPost in range(0,10):
-                	if distance(pos, self.postPosition[nPost,:], True) < 0.1:
-                		self.observer.reset_to(**self.start_position)
-                		self.cntr += 1
-                		break
-                if distance(pos, self.start_position, False) > 2.0:
-                	self.observer.reset_to(**self.start_position)
-                	self.cntr += 1
-
                 if t > self.tExp*60*.9 and lastMessage:
 
                     try:
@@ -205,6 +197,15 @@ class MyExperiment(object):
                     self.updateStimuli(nStimuli)
                     self.cntr = 0
                 
+                for nPost in range(0,10):
+                    if distance(pos, self.postPosition[nPost,:], True) < 0.1:
+                        self.observer.reset_to(**self.start_position)
+                        self.cntr += 1
+                        break
+                if distance(pos, self.start_position, False) > 2.0:
+                    self.observer.reset_to(**self.start_position)
+                    self.cntr += 1
+
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
                 output.write('%3.2f, %3.2f,%3.2f, %3.2f, %s\n' % (pos['x'], pos['y'], self.cntr, t, str(nStimuli)))
