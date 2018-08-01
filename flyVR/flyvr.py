@@ -147,9 +147,9 @@ class MyExperiment(object):
             cursorProject.execute("Select tSwitch from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             fetched = cursorProject.fetchall()
             print('fetched : ' + str(fetched))
-            self.tSwitch = np.unique(fetched)
+            self.tSwitch = 1.0/5.0#np.unique(fetched)
             cursorProject.execute("Select tExp from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
-            self.tExp = np.unique(cursorProject.fetchall())  
+            self.tExp = 1.0#np.unique(cursorProject.fetchall())  
             self.dateStart = datetime.datetime.now()      
         else:
             tExp = 0
@@ -177,6 +177,7 @@ class MyExperiment(object):
         with open(path+'/results.csv', 'w') as output:
             while self.running:
                 pos = self.observer.position
+                direc = self.observer.azimuth - np.pi/2.0
                 t = time.time() - t0
 
                 if t > self.tExp*60*.9 and lastMessage:
@@ -208,7 +209,7 @@ class MyExperiment(object):
 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
-                output.write('%3.2f, %3.2f,%3.2f, %3.2f, %s\n' % (pos['x'], pos['y'], self.cntr, t, str(nStimuli)))
+                output.write('%3.2f, %3.2f,%3.2f, %3.2f, %3.2f, %s\n' % (pos['x'], pos['y'], direc, self.cntr, t, str(nStimuli)))
                 time.sleep(0.005)
 
 
