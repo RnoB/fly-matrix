@@ -41,9 +41,13 @@ def pathDefine(path,ids, params=[]):
 
 
 
-def distance(pos0, pos1):
+def distance(pos0, pos1, post):
 	dx = pos0['x'] - pos1[0]
-	dy = pos0['1'] - pos1[1]
+	if post == True:
+		dy = pos0['y'] - pos1[1]
+	else:
+		dy = pos0['y'] - pos1['y']
+
 	return math.sqrt(dx**2 + dy**2)
 
 
@@ -80,7 +84,9 @@ class MyExperiment(object):
         # start every experiment with a no post condition
         self.updateStimuli(0)
         emailer.twitStatus(self.expId,status = 0, t=self.tExp)
-        self.running =True
+        self.running = True
+        # event counter (number of times fly position is reset)
+        self.cntr = 0
 
 
     def _observer_callback(self, info_dict):
@@ -173,8 +179,13 @@ class MyExperiment(object):
                 t = time.time() - t0
 
                 for nPost in range(0,10):
-                	if distance(pos, self.postPosition[nPost,:]) < 0.1:
+                	if distance(pos, self.postPosition[nPost,:], True) < 0.1:
                 		self.observer.reset_to(**self.start_position)
+                		self.cntr += 1
+                		break
+                if distance(pos, self.start_position, False) > 2.0:
+                	self.observer.reset_to(**self.start_position)
+                	self.cntr += 1
 
                 if t > self.tExp*60*.9 and lastMessage:
 
@@ -192,10 +203,11 @@ class MyExperiment(object):
                     nStimuli = nStimuli+1
                     self.observer.reset_to(**self.start_position)
                     self.updateStimuli(nStimuli)
+                    self.cntr = 0
                 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
-                #output.write('%3.2f, %3.2f,%3.2f, %s\n' % (pos['x'], pos['y'],t, str(nStimuli)))
+                output.write('%3.2f, %3.2f,%3.2f, %3.2f, %s\n' % (pos['x'], pos['y'], self.cntr, t, str(nStimuli)))
                 time.sleep(0.005)
 
 
