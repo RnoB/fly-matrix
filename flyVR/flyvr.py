@@ -177,7 +177,7 @@ class MyExperiment(object):
         with open(path+'/results.csv', 'w') as output:
             while self.running:
                 pos = self.observer.position
-                direc = self.observer.azimuth - np.pi/2.0
+                direc = self.observer.azimuth
                 t = time.time() - t0
 
                 if t > self.tExp*60*.9 and lastMessage:
