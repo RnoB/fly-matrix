@@ -147,9 +147,9 @@ class MyExperiment(object):
             cursorProject.execute("Select tSwitch from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
             fetched = cursorProject.fetchall()
             print('fetched : ' + str(fetched))
-            self.tSwitch = 1.0/5.0#np.unique(fetched)
+            self.tSwitch = np.unique(fetched)
             cursorProject.execute("Select tExp from projects where project = ? and exp = ? and replicate = ?",(project,self.expTrial,self.replicate,))
-            self.tExp = 1.0#np.unique(cursorProject.fetchall())  
+            self.tExp = np.unique(cursorProject.fetchall())  
             self.dateStart = datetime.datetime.now()      
         else:
             tExp = 0
