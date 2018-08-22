@@ -19,8 +19,8 @@ replication = 4
 project = 'DecisionGeometry'
 experimenter = 'VHS'
 
-projectDB = '/home/flyvr/flyvr/examples/flyProjects.db'
-expDB = '/home/flyvr/flyvr/examples/flyExperiments.db'
+projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyProjects.db'
+expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyExperiments.db'
 pathData = '/home/flyvr/flyvr/data/'
 
 expTime = 120
@@ -100,7 +100,7 @@ class MyExperiment(object):
         y = -kwargs.get('y')
         z = -kwargs.get('z')
 
-        self.ds_proxy.move_node('Root', x , y , 0)
+        self.ds_proxy.move_node('Root',x ,y ,0)
         #for n in range(0,10):
             #self.ds_proxy.move_node('Cylinder' + str(n), x + self.postPosition[n,0], y + self.postPosition[n,1], 0)
 
