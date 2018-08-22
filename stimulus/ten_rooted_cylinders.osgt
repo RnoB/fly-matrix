@@ -1,47 +1,57 @@
 #Ascii Scene
 #Version 92
-#Generator osgexport 0.13.0
+#Generator osgexport 0.14.2
 
 osg::Group {
-  UniqueID 498
+  UniqueID 266
   Name "Root"
   Children 2 {
     osg::MatrixTransform {
-      UniqueID 254
+      UniqueID 0
       Name "Root"
       Children 10 {
         osg::MatrixTransform {
-          UniqueID 256
+          UniqueID 2
           Name "Cylinder0"
           Children 1 {
             osg::Geode {
-              UniqueID 277
+              UniqueID 25
               Name "GeodeCylinder"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 258
+                  UniqueID 4
                   Name "Cylinder0"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 259
+                      UniqueID 5
                       Name "black"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 272
-                          UDC_UserObjects 3 {
+                          UniqueID 18
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 273
+                              UniqueID 19
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 275
+                              UniqueID 21
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 22
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 23
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 276
+                              UniqueID 24
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -53,60 +63,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 260
+                          UniqueID 6
                           Name "black"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 261
+                              UniqueID 7
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 262
+                                  UniqueID 8
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 263
+                                  UniqueID 9
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 264
+                                  UniqueID 10
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 265
+                                  UniqueID 11
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 266
+                                  UniqueID 12
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 267
+                                  UniqueID 13
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 268
+                                  UniqueID 14
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 269
+                                  UniqueID 15
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 270
+                                  UniqueID 16
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 271
+                                  UniqueID 17
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -129,7 +139,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 274
+                            UniqueID 20
                             Name "Texture"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -137,7 +147,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 499
+                              UniqueID 267
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -148,7 +158,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -210,7 +220,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -246,7 +256,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 22 Vec3fArray 192 {
+                    Array TRUE ArrayID 0 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -445,7 +455,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 23 Vec3fArray 192 {
+                    Array TRUE ArrayID 1 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -648,44 +658,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 278
+          UniqueID 26
           Name "Cylinder1"
           Children 1 {
             osg::Geode {
-              UniqueID 299
+              UniqueID 49
               Name "GeodeCylinder.001"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 280
+                  UniqueID 28
                   Name "Cylinder1"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 281
+                      UniqueID 29
                       Name "black.001"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 294
-                          UDC_UserObjects 3 {
+                          UniqueID 42
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 295
+                              UniqueID 43
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 297
+                              UniqueID 45
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 46
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 47
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 298
+                              UniqueID 48
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -697,60 +717,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 282
+                          UniqueID 30
                           Name "black.001"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 283
+                              UniqueID 31
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 284
+                                  UniqueID 32
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 285
+                                  UniqueID 33
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 286
+                                  UniqueID 34
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 287
+                                  UniqueID 35
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 288
+                                  UniqueID 36
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 289
+                                  UniqueID 37
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 290
+                                  UniqueID 38
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 291
+                                  UniqueID 39
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 292
+                                  UniqueID 40
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 293
+                                  UniqueID 41
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -773,7 +793,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 296
+                            UniqueID 44
                             Name "Texture.001"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -781,7 +801,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 500
+                              UniqueID 268
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -792,7 +812,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -854,7 +874,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -890,7 +910,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 24 Vec3fArray 192 {
+                    Array TRUE ArrayID 2 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -1089,7 +1109,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 25 Vec3fArray 192 {
+                    Array TRUE ArrayID 3 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -1292,44 +1312,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 300
+          UniqueID 50
           Name "Cylinder2"
           Children 1 {
             osg::Geode {
-              UniqueID 321
+              UniqueID 73
               Name "GeodeCylinder.002"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 302
+                  UniqueID 52
                   Name "Cylinder2"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 303
+                      UniqueID 53
                       Name "black.002"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 316
-                          UDC_UserObjects 3 {
+                          UniqueID 66
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 317
+                              UniqueID 67
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 319
+                              UniqueID 69
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 70
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 71
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 320
+                              UniqueID 72
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -1341,60 +1371,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 304
+                          UniqueID 54
                           Name "black.002"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 305
+                              UniqueID 55
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 306
+                                  UniqueID 56
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 307
+                                  UniqueID 57
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 308
+                                  UniqueID 58
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 309
+                                  UniqueID 59
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 310
+                                  UniqueID 60
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 311
+                                  UniqueID 61
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 312
+                                  UniqueID 62
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 313
+                                  UniqueID 63
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 314
+                                  UniqueID 64
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 315
+                                  UniqueID 65
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -1417,7 +1447,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 318
+                            UniqueID 68
                             Name "Texture.002"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -1425,7 +1455,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 501
+                              UniqueID 269
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -1436,7 +1466,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -1498,7 +1528,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -1534,7 +1564,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 26 Vec3fArray 192 {
+                    Array TRUE ArrayID 4 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -1733,7 +1763,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 27 Vec3fArray 192 {
+                    Array TRUE ArrayID 5 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -1936,44 +1966,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 322
+          UniqueID 74
           Name "Cylinder3"
           Children 1 {
             osg::Geode {
-              UniqueID 343
+              UniqueID 97
               Name "GeodeCylinder.003"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 324
+                  UniqueID 76
                   Name "Cylinder3"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 325
+                      UniqueID 77
                       Name "black.003"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 338
-                          UDC_UserObjects 3 {
+                          UniqueID 90
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 339
+                              UniqueID 91
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 341
+                              UniqueID 93
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 94
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 95
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 342
+                              UniqueID 96
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -1985,60 +2025,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 326
+                          UniqueID 78
                           Name "black.003"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 327
+                              UniqueID 79
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 328
+                                  UniqueID 80
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 329
+                                  UniqueID 81
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 330
+                                  UniqueID 82
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 331
+                                  UniqueID 83
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 332
+                                  UniqueID 84
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 333
+                                  UniqueID 85
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 334
+                                  UniqueID 86
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 335
+                                  UniqueID 87
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 336
+                                  UniqueID 88
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 337
+                                  UniqueID 89
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -2061,7 +2101,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 340
+                            UniqueID 92
                             Name "Texture.003"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -2069,7 +2109,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 502
+                              UniqueID 270
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -2080,7 +2120,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -2142,7 +2182,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -2178,7 +2218,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 28 Vec3fArray 192 {
+                    Array TRUE ArrayID 6 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -2377,7 +2417,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 29 Vec3fArray 192 {
+                    Array TRUE ArrayID 7 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -2580,44 +2620,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 344
+          UniqueID 98
           Name "Cylinder4"
           Children 1 {
             osg::Geode {
-              UniqueID 365
+              UniqueID 121
               Name "GeodeCylinder.004"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 346
+                  UniqueID 100
                   Name "Cylinder4"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 347
+                      UniqueID 101
                       Name "black.004"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 360
-                          UDC_UserObjects 3 {
+                          UniqueID 114
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 361
+                              UniqueID 115
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 363
+                              UniqueID 117
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 118
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 119
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 364
+                              UniqueID 120
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -2629,60 +2679,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 348
+                          UniqueID 102
                           Name "black.004"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 349
+                              UniqueID 103
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 350
+                                  UniqueID 104
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 351
+                                  UniqueID 105
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 352
+                                  UniqueID 106
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 353
+                                  UniqueID 107
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 354
+                                  UniqueID 108
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 355
+                                  UniqueID 109
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 356
+                                  UniqueID 110
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 357
+                                  UniqueID 111
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 358
+                                  UniqueID 112
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 359
+                                  UniqueID 113
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -2705,7 +2755,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 362
+                            UniqueID 116
                             Name "Texture.004"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -2713,7 +2763,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 503
+                              UniqueID 271
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -2724,7 +2774,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -2786,7 +2836,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -2822,7 +2872,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 30 Vec3fArray 192 {
+                    Array TRUE ArrayID 8 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -3021,7 +3071,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 31 Vec3fArray 192 {
+                    Array TRUE ArrayID 9 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -3224,44 +3274,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 366
+          UniqueID 122
           Name "Cylinder5"
           Children 1 {
             osg::Geode {
-              UniqueID 387
+              UniqueID 145
               Name "GeodeCylinder.005"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 368
+                  UniqueID 124
                   Name "Cylinder5"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 369
+                      UniqueID 125
                       Name "black.005"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 382
-                          UDC_UserObjects 3 {
+                          UniqueID 138
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 383
+                              UniqueID 139
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 385
+                              UniqueID 141
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 142
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 143
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 386
+                              UniqueID 144
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -3273,60 +3333,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 370
+                          UniqueID 126
                           Name "black.005"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 371
+                              UniqueID 127
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 372
+                                  UniqueID 128
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 373
+                                  UniqueID 129
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 374
+                                  UniqueID 130
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 375
+                                  UniqueID 131
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 376
+                                  UniqueID 132
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 377
+                                  UniqueID 133
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 378
+                                  UniqueID 134
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 379
+                                  UniqueID 135
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 380
+                                  UniqueID 136
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 381
+                                  UniqueID 137
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -3349,7 +3409,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 384
+                            UniqueID 140
                             Name "Texture.005"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -3357,7 +3417,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 504
+                              UniqueID 272
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -3368,7 +3428,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -3430,7 +3490,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -3466,7 +3526,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 32 Vec3fArray 192 {
+                    Array TRUE ArrayID 10 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -3665,7 +3725,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 33 Vec3fArray 192 {
+                    Array TRUE ArrayID 11 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -3868,44 +3928,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 388
+          UniqueID 146
           Name "Cylinder6"
           Children 1 {
             osg::Geode {
-              UniqueID 409
+              UniqueID 169
               Name "GeodeCylinder.006"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 390
+                  UniqueID 148
                   Name "Cylinder6"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 391
+                      UniqueID 149
                       Name "black.006"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 404
-                          UDC_UserObjects 3 {
+                          UniqueID 162
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 405
+                              UniqueID 163
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 407
+                              UniqueID 165
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 166
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 167
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 408
+                              UniqueID 168
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -3917,60 +3987,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 392
+                          UniqueID 150
                           Name "black.006"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 393
+                              UniqueID 151
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 394
+                                  UniqueID 152
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 395
+                                  UniqueID 153
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 396
+                                  UniqueID 154
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 397
+                                  UniqueID 155
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 398
+                                  UniqueID 156
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 399
+                                  UniqueID 157
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 400
+                                  UniqueID 158
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 401
+                                  UniqueID 159
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 402
+                                  UniqueID 160
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 403
+                                  UniqueID 161
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -3993,7 +4063,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 406
+                            UniqueID 164
                             Name "Texture.006"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -4001,7 +4071,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 505
+                              UniqueID 273
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -4012,7 +4082,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -4074,7 +4144,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -4110,7 +4180,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 34 Vec3fArray 192 {
+                    Array TRUE ArrayID 12 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -4309,7 +4379,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 35 Vec3fArray 192 {
+                    Array TRUE ArrayID 13 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -4512,44 +4582,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 410
+          UniqueID 170
           Name "Cylinder9"
           Children 1 {
             osg::Geode {
-              UniqueID 431
+              UniqueID 193
               Name "GeodeCylinder.007"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 412
+                  UniqueID 172
                   Name "Cylinder9"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 413
+                      UniqueID 173
                       Name "black.007"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 426
-                          UDC_UserObjects 3 {
+                          UniqueID 186
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 427
+                              UniqueID 187
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 429
+                              UniqueID 189
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 190
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 191
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 430
+                              UniqueID 192
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -4561,60 +4641,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 414
+                          UniqueID 174
                           Name "black.007"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 415
+                              UniqueID 175
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 416
+                                  UniqueID 176
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 417
+                                  UniqueID 177
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 418
+                                  UniqueID 178
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 419
+                                  UniqueID 179
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 420
+                                  UniqueID 180
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 421
+                                  UniqueID 181
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 422
+                                  UniqueID 182
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 423
+                                  UniqueID 183
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 424
+                                  UniqueID 184
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 425
+                                  UniqueID 185
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -4637,7 +4717,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 428
+                            UniqueID 188
                             Name "Texture.007"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -4645,7 +4725,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 506
+                              UniqueID 274
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -4656,7 +4736,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -4718,7 +4798,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -4754,7 +4834,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 36 Vec3fArray 192 {
+                    Array TRUE ArrayID 14 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -4953,7 +5033,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 37 Vec3fArray 192 {
+                    Array TRUE ArrayID 15 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -5156,44 +5236,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 432
+          UniqueID 194
           Name "Cylinder8"
           Children 1 {
             osg::Geode {
-              UniqueID 453
+              UniqueID 217
               Name "GeodeCylinder.008"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 434
+                  UniqueID 196
                   Name "Cylinder8"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 435
+                      UniqueID 197
                       Name "black.008"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 448
-                          UDC_UserObjects 3 {
+                          UniqueID 210
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 449
+                              UniqueID 211
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 451
+                              UniqueID 213
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 214
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 215
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 452
+                              UniqueID 216
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -5205,60 +5295,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 436
+                          UniqueID 198
                           Name "black.008"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 437
+                              UniqueID 199
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 438
+                                  UniqueID 200
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 439
+                                  UniqueID 201
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 440
+                                  UniqueID 202
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 441
+                                  UniqueID 203
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 442
+                                  UniqueID 204
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 443
+                                  UniqueID 205
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 444
+                                  UniqueID 206
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 445
+                                  UniqueID 207
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 446
+                                  UniqueID 208
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 447
+                                  UniqueID 209
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -5281,7 +5371,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 450
+                            UniqueID 212
                             Name "Texture.008"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -5289,7 +5379,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 507
+                              UniqueID 275
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -5300,7 +5390,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -5362,7 +5452,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -5398,7 +5488,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 38 Vec3fArray 192 {
+                    Array TRUE ArrayID 16 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -5597,7 +5687,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 39 Vec3fArray 192 {
+                    Array TRUE ArrayID 17 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -5800,44 +5890,54 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
-          UniqueID 454
+          UniqueID 218
           Name "Cylinder7"
           Children 1 {
             osg::Geode {
-              UniqueID 475
+              UniqueID 241
               Name "GeodeCylinder.009"
               Drawables 1 {
                 osg::Geometry {
-                  UniqueID 456
+                  UniqueID 220
                   Name "Cylinder7"
                   StateSet TRUE {
                     osg::StateSet {
-                      UniqueID 457
+                      UniqueID 221
                       Name "black.009"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 470
-                          UDC_UserObjects 3 {
+                          UniqueID 234
+                          UDC_UserObjects 5 {
                             osg::StringValueObject {
-                              UniqueID 471
+                              UniqueID 235
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 473
+                              UniqueID 237
+                              Name "00_UsePremultiplyAlpha"
+                              Value "false"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 238
+                              Name "00_UseAlpha"
+                              Value "true"
+                            }
+                            osg::StringValueObject {
+                              UniqueID 239
                               Name "00_DiffuseColor"
                               Value "1.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 474
+                              UniqueID 240
                               Name "00_BlendType"
                               Value "MIX"
                             }
@@ -5849,60 +5949,60 @@ osg::Group {
                       }
                       AttributeList 1 {
                         osg::Material {
-                          UniqueID 458
+                          UniqueID 222
                           Name "black.009"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
-                              UniqueID 459
+                              UniqueID 223
                               UDC_UserObjects 10 {
                                 osg::StringValueObject {
-                                  UniqueID 460
+                                  UniqueID 224
                                   Name "source"
                                   Value "blender"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 461
+                                  UniqueID 225
                                   Name "DiffuseIntensity"
                                   Value "0.800000011920929"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 462
+                                  UniqueID 226
                                   Name "DiffuseColor"
                                   Value "[ 0.800000, 0.800000, 0.800000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 463
+                                  UniqueID 227
                                   Name "SpecularIntensity"
                                   Value "0.5"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 464
+                                  UniqueID 228
                                   Name "SpecularColor"
                                   Value "[ 1.000000, 1.000000, 1.000000 ]"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 465
+                                  UniqueID 229
                                   Name "SpecularHardness"
                                   Value "50"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 466
+                                  UniqueID 230
                                   Name "Shadeless"
                                   Value "true"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 467
+                                  UniqueID 231
                                   Name "Translucency"
                                   Value "0.0"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 468
+                                  UniqueID 232
                                   Name "DiffuseShader"
                                   Value "LAMBERT"
                                 }
                                 osg::StringValueObject {
-                                  UniqueID 469
+                                  UniqueID 233
                                   Name "SpecularShader"
                                   Value "COOKTORR"
                                 }
@@ -5925,7 +6025,7 @@ osg::Group {
                       TextureAttributeList 1 {
                         Data 1 {
                           osg::Texture2D {
-                            UniqueID 472
+                            UniqueID 236
                             Name "Texture.009"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
@@ -5933,7 +6033,7 @@ osg::Group {
                             MIN_FILTER LINEAR_MIPMAP_LINEAR
                             MAG_FILTER LINEAR
                             Image TRUE {
-                              UniqueID 508
+                              UniqueID 276
                               FileName "textures/black.png"
                               WriteHint 0 2
                             }
@@ -5944,7 +6044,7 @@ osg::Group {
                     }
                   }
                   PrimitiveSetList 2 {
-                      DrawElementsUInt GL_TRIANGLES 180 {
+                      DrawElementsUByte GL_TRIANGLES 180 {
                         120 121 122 
                         122 123 124 
                         124 125 126 
@@ -6006,7 +6106,7 @@ osg::Group {
                         160 168 176 
                         176 184 160 
                       }
-                      DrawElementsUInt GL_QUADS 128 {
+                      DrawElementsUByte GL_QUADS 128 {
                         0 1 2 3 
                         4 5 6 7 
                         8 9 10 11 
@@ -6042,7 +6142,7 @@ osg::Group {
                       }
                   }
                   VertexData {
-                    Array TRUE ArrayID 40 Vec3fArray 192 {
+                    Array TRUE ArrayID 18 Vec3fArray 192 {
                       0.00000 0.05000 -5.00000
                       0.00000 0.05000 5.00000
                       0.00975 0.04904 5.00000
@@ -6241,7 +6341,7 @@ osg::Group {
                     Normalize 0
                   }
                   NormalData {
-                    Array TRUE ArrayID 41 Vec3fArray 192 {
+                    Array TRUE ArrayID 19 Vec3fArray 192 {
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
                       0.09802 0.99518 0.00000
@@ -6444,8 +6544,8 @@ osg::Group {
             }
           }
           Matrix {
-            1.00000 0.00000 0.00000 0.00000
-            0.00000 1.00000 0.00000 0.00000
+            0.50000 0.00000 0.00000 0.00000
+            0.00000 0.50000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
@@ -6459,37 +6559,47 @@ osg::Group {
       }
     }
     osg::MatrixTransform {
-      UniqueID 476
+      UniqueID 242
       Name "Cube"
       Children 1 {
         osg::Geode {
-          UniqueID 497
+          UniqueID 265
           Name "GeodeCube"
           Drawables 1 {
             osg::Geometry {
-              UniqueID 478
+              UniqueID 244
               Name "Cube"
               StateSet TRUE {
                 osg::StateSet {
-                  UniqueID 479
+                  UniqueID 245
                   Name "Material"
                   DataVariance DYNAMIC
                   UserDataContainer TRUE {
                     osg::DefaultUserDataContainer {
-                      UniqueID 492
-                      UDC_UserObjects 3 {
+                      UniqueID 258
+                      UDC_UserObjects 5 {
                         osg::StringValueObject {
-                          UniqueID 493
+                          UniqueID 259
                           Name "source"
                           Value "blender"
                         }
                         osg::StringValueObject {
-                          UniqueID 495
+                          UniqueID 261
+                          Name "00_UsePremultiplyAlpha"
+                          Value "false"
+                        }
+                        osg::StringValueObject {
+                          UniqueID 262
+                          Name "00_UseAlpha"
+                          Value "true"
+                        }
+                        osg::StringValueObject {
+                          UniqueID 263
                           Name "00_DiffuseColor"
                           Value "1.0"
                         }
                         osg::StringValueObject {
-                          UniqueID 496
+                          UniqueID 264
                           Name "00_BlendType"
                           Value "MIX"
                         }
@@ -6501,60 +6611,60 @@ osg::Group {
                   }
                   AttributeList 1 {
                     osg::Material {
-                      UniqueID 480
+                      UniqueID 246
                       Name "Material"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
-                          UniqueID 481
+                          UniqueID 247
                           UDC_UserObjects 10 {
                             osg::StringValueObject {
-                              UniqueID 482
+                              UniqueID 248
                               Name "source"
                               Value "blender"
                             }
                             osg::StringValueObject {
-                              UniqueID 483
+                              UniqueID 249
                               Name "DiffuseIntensity"
                               Value "0.800000011920929"
                             }
                             osg::StringValueObject {
-                              UniqueID 484
+                              UniqueID 250
                               Name "DiffuseColor"
                               Value "[ 0.800000, 0.800000, 0.800000 ]"
                             }
                             osg::StringValueObject {
-                              UniqueID 485
+                              UniqueID 251
                               Name "SpecularIntensity"
                               Value "0.5"
                             }
                             osg::StringValueObject {
-                              UniqueID 486
+                              UniqueID 252
                               Name "SpecularColor"
                               Value "[ 1.000000, 1.000000, 1.000000 ]"
                             }
                             osg::StringValueObject {
-                              UniqueID 487
+                              UniqueID 253
                               Name "SpecularHardness"
                               Value "50"
                             }
                             osg::StringValueObject {
-                              UniqueID 488
+                              UniqueID 254
                               Name "Shadeless"
                               Value "true"
                             }
                             osg::StringValueObject {
-                              UniqueID 489
+                              UniqueID 255
                               Name "Translucency"
                               Value "0.0"
                             }
                             osg::StringValueObject {
-                              UniqueID 490
+                              UniqueID 256
                               Name "DiffuseShader"
                               Value "LAMBERT"
                             }
                             osg::StringValueObject {
-                              UniqueID 491
+                              UniqueID 257
                               Name "SpecularShader"
                               Value "COOKTORR"
                             }
@@ -6577,7 +6687,7 @@ osg::Group {
                   TextureAttributeList 1 {
                     Data 1 {
                       osg::Texture2D {
-                        UniqueID 494
+                        UniqueID 260
                         Name "Texture.010"
                         WRAP_S REPEAT
                         WRAP_T REPEAT
@@ -6585,7 +6695,7 @@ osg::Group {
                         MIN_FILTER LINEAR_MIPMAP_LINEAR
                         MAG_FILTER LINEAR
                         Image TRUE {
-                          UniqueID 509
+                          UniqueID 277
                           FileName "textures/white.png"
                           WriteHint 0 2
                         }
@@ -6596,7 +6706,7 @@ osg::Group {
                 }
               }
               PrimitiveSetList 1 {
-                  DrawElementsUInt GL_QUADS 24 {
+                  DrawElementsUByte GL_QUADS 24 {
                     0 1 2 3 
                     4 5 6 7 
                     8 9 10 11 
@@ -6606,7 +6716,7 @@ osg::Group {
                   }
               }
               VertexData {
-                Array TRUE ArrayID 42 Vec3fArray 24 {
+                Array TRUE ArrayID 20 Vec3fArray 24 {
                   -5.00000 5.00000 -5.00000
                   -5.00000 -5.00000 -5.00000
                   -5.00000 -5.00000 5.00000
@@ -6637,7 +6747,7 @@ osg::Group {
                 Normalize 0
               }
               NormalData {
-                Array TRUE ArrayID 43 Vec3fArray 24 {
+                Array TRUE ArrayID 21 Vec3fArray 24 {
                   -1.00000 0.00000 -0.00000
                   -1.00000 0.00000 -0.00000
                   -1.00000 0.00000 -0.00000
