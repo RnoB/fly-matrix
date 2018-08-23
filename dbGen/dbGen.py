@@ -192,7 +192,7 @@ def main():
 				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 	if expType == 'angles':
-		for N in range(2,4):
+		for N in range(1,2):
 			for d in distances:
 				# write your new stimuli
 				exp += 1
