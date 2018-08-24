@@ -1,0 +1,148 @@
+obj Root
+
+Type of Root is EMPTY
+
+Type of Cylinder0 is MESH
+exporting object Cylinder0
+mesh_object is Cylinder
+mesh Cylinder0 with material Material.001
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder1 is MESH
+exporting object Cylinder1
+mesh_object is Cylinder.001
+mesh Cylinder1 with material Material.002
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder2 is MESH
+exporting object Cylinder2
+mesh_object is Cylinder.002
+mesh Cylinder2 with material Material.003
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder3 is MESH
+exporting object Cylinder3
+mesh_object is Cylinder.003
+mesh Cylinder3 with material Material.004
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder4 is MESH
+exporting object Cylinder4
+mesh_object is Cylinder.004
+mesh Cylinder4 with material Material.005
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder5 is MESH
+exporting object Cylinder5
+mesh_object is Cylinder.005
+mesh Cylinder5 with material Material.006
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder6 is MESH
+exporting object Cylinder6
+mesh_object is Cylinder.006
+mesh Cylinder6 with material Material.007
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder7 is MESH
+exporting object Cylinder7
+mesh_object is Cylinder.007
+mesh Cylinder7 with material Material.008
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder8 is MESH
+exporting object Cylinder8
+mesh_object is Cylinder.008
+mesh Cylinder8 with material Material.009
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+
+Type of Cylinder9 is MESH
+exporting object Cylinder9
+mesh_object is Cylinder.009
+mesh Cylinder9 with material Material.010
+vertexes reduced from 308 to 192
+faces 92
+WARNING update material animation not yet supported
+-----------------------------------------
+vertex groups False False 
+obj Cylinder0
+obj Cylinder1
+obj Cylinder2
+obj Cylinder3
+obj Cylinder4
+obj Cylinder5
+obj Cylinder6
+obj Cylinder7
+obj Cylinder8
+obj Cylinder9
+obj Cube
+
+Type of Cube is MESH
+exporting object Cube
+mesh_object is Cube
+mesh Cube with material Material
+vertexes 24
+faces 6
+WARNING update material animation not yet supported
+--------------------------------
+vertex groups False False 
+geode GeodeCylinder
+geode GeodeCylinder.001
+geode GeodeCylinder.002
+geode GeodeCylinder.003
+geode GeodeCylinder.004
+geode GeodeCylinder.005
+geode GeodeCylinder.006
+geode GeodeCylinder.007
+geode GeodeCylinder.008
+geode GeodeCylinder.009
+geode GeodeCube
+write file to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/ten_post_stimulus.osgt
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+error while trying to copy file white.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/white.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/white.png' are the same file
+error while trying to copy file black.png to /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures: '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' and '/mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/textures/black.png' are the same file
+Check log file /mnt/ssd1/Documents/Vivek/flyVR/fly-matrix/stimulus/ten_post_stimulus.log
