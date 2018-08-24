@@ -12,19 +12,19 @@ osg::Group {
       Children 10 {
         osg::MatrixTransform {
           UniqueID 2
-          Name "Cylinder9"
+          Name "Cylinder0"
           Children 1 {
             osg::Geode {
               UniqueID 25
-              Name "GeodeCylinder.008"
+              Name "GeodeCylinder"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 4
-                  Name "Cylinder9"
+                  Name "Cylinder0"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 5
-                      Name "Material.009"
+                      Name "Material.001"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -64,7 +64,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 6
-                          Name "Material.009"
+                          Name "Material.001"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -140,7 +140,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 20
-                            Name "Texture.010"
+                            Name "Texture.001"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -658,27 +658,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 26
-          Name "Cylinder8"
+          Name "Cylinder1"
           Children 1 {
             osg::Geode {
               UniqueID 49
-              Name "GeodeCylinder.009"
+              Name "GeodeCylinder.001"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 28
-                  Name "Cylinder8"
+                  Name "Cylinder1"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 29
-                      Name "Material.010"
+                      Name "Material.002"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -718,7 +718,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 30
-                          Name "Material.010"
+                          Name "Material.002"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -794,7 +794,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 44
-                            Name "Texture.011"
+                            Name "Texture.002"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -1312,27 +1312,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 50
-          Name "Cylinder4"
+          Name "Cylinder2"
           Children 1 {
             osg::Geode {
               UniqueID 73
-              Name "GeodeCylinder.004"
+              Name "GeodeCylinder.002"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 52
-                  Name "Cylinder4"
+                  Name "Cylinder2"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 53
-                      Name "Material.005"
+                      Name "Material.003"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -1372,7 +1372,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 54
-                          Name "Material.005"
+                          Name "Material.003"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -1448,7 +1448,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 68
-                            Name "Texture.006"
+                            Name "Texture.003"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -1966,27 +1966,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 74
-          Name "Cylinder5"
+          Name "Cylinder3"
           Children 1 {
             osg::Geode {
               UniqueID 97
-              Name "GeodeCylinder.005"
+              Name "GeodeCylinder.003"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 76
-                  Name "Cylinder5"
+                  Name "Cylinder3"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 77
-                      Name "Material.006"
+                      Name "Material.004"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -2026,7 +2026,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 78
-                          Name "Material.006"
+                          Name "Material.004"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -2102,7 +2102,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 92
-                            Name "Texture.007"
+                            Name "Texture.004"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -2620,27 +2620,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 98
-          Name "Cylinder7"
+          Name "Cylinder4"
           Children 1 {
             osg::Geode {
               UniqueID 121
-              Name "GeodeCylinder.006"
+              Name "GeodeCylinder.004"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 100
-                  Name "Cylinder7"
+                  Name "Cylinder4"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 101
-                      Name "Material.007"
+                      Name "Material.005"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -2680,7 +2680,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 102
-                          Name "Material.007"
+                          Name "Material.005"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -2756,7 +2756,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 116
-                            Name "Texture.008"
+                            Name "Texture.005"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -3274,27 +3274,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 122
-          Name "Cylinder6"
+          Name "Cylinder5"
           Children 1 {
             osg::Geode {
               UniqueID 145
-              Name "GeodeCylinder.007"
+              Name "GeodeCylinder.005"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 124
-                  Name "Cylinder6"
+                  Name "Cylinder5"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 125
-                      Name "Material.008"
+                      Name "Material.006"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -3334,7 +3334,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 126
-                          Name "Material.008"
+                          Name "Material.006"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -3410,7 +3410,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 140
-                            Name "Texture.009"
+                            Name "Texture.006"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -3928,27 +3928,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 146
-          Name "Cylinder0"
+          Name "Cylinder6"
           Children 1 {
             osg::Geode {
               UniqueID 169
-              Name "GeodeCylinder"
+              Name "GeodeCylinder.006"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 148
-                  Name "Cylinder0"
+                  Name "Cylinder6"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 149
-                      Name "Material.001"
+                      Name "Material.007"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -3988,7 +3988,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 150
-                          Name "Material.001"
+                          Name "Material.007"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -4064,7 +4064,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 164
-                            Name "Texture.001"
+                            Name "Texture.007"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -4582,27 +4582,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 170
-          Name "Cylinder1"
+          Name "Cylinder7"
           Children 1 {
             osg::Geode {
               UniqueID 193
-              Name "GeodeCylinder.001"
+              Name "GeodeCylinder.007"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 172
-                  Name "Cylinder1"
+                  Name "Cylinder7"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 173
-                      Name "Material.002"
+                      Name "Material.008"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -4642,7 +4642,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 174
-                          Name "Material.002"
+                          Name "Material.008"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -4718,7 +4718,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 188
-                            Name "Texture.003"
+                            Name "Texture.008"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -5236,27 +5236,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 194
-          Name "Cylinder2"
+          Name "Cylinder8"
           Children 1 {
             osg::Geode {
               UniqueID 217
-              Name "GeodeCylinder.002"
+              Name "GeodeCylinder.008"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 196
-                  Name "Cylinder2"
+                  Name "Cylinder8"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 197
-                      Name "Material.003"
+                      Name "Material.009"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -5296,7 +5296,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 198
-                          Name "Material.003"
+                          Name "Material.009"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -5372,7 +5372,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 212
-                            Name "Texture.004"
+                            Name "Texture.009"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -5890,27 +5890,27 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
           UniqueID 218
-          Name "Cylinder3"
+          Name "Cylinder9"
           Children 1 {
             osg::Geode {
               UniqueID 241
-              Name "GeodeCylinder.003"
+              Name "GeodeCylinder.009"
               Drawables 1 {
                 osg::Geometry {
                   UniqueID 220
-                  Name "Cylinder3"
+                  Name "Cylinder9"
                   StateSet TRUE {
                     osg::StateSet {
                       UniqueID 221
-                      Name "Material.004"
+                      Name "Material.010"
                       DataVariance DYNAMIC
                       UserDataContainer TRUE {
                         osg::DefaultUserDataContainer {
@@ -5950,7 +5950,7 @@ osg::Group {
                       AttributeList 1 {
                         osg::Material {
                           UniqueID 222
-                          Name "Material.004"
+                          Name "Material.010"
                           DataVariance DYNAMIC
                           UserDataContainer TRUE {
                             osg::DefaultUserDataContainer {
@@ -6026,7 +6026,7 @@ osg::Group {
                         Data 1 {
                           osg::Texture2D {
                             UniqueID 236
-                            Name "Texture.005"
+                            Name "Texture.010"
                             WRAP_S REPEAT
                             WRAP_T REPEAT
                             WRAP_R REPEAT
@@ -6544,9 +6544,9 @@ osg::Group {
             }
           }
           Matrix {
-            0.20000 0.00000 0.00000 0.00000
-            0.00000 0.20000 0.00000 0.00000
-            0.00000 0.00000 10.00000 0.00000
+            0.10000 0.00000 0.00000 0.00000
+            0.00000 0.10000 0.00000 0.00000
+            0.00000 0.00000 25.00000 0.00000
             0.00000 0.00000 0.00000 1.00000
           }
         }
@@ -6688,7 +6688,7 @@ osg::Group {
                     Data 1 {
                       osg::Texture2D {
                         UniqueID 260
-                        Name "Texture.002"
+                        Name "Texture"
                         WRAP_S REPEAT
                         WRAP_T REPEAT
                         WRAP_R REPEAT
@@ -6782,9 +6782,9 @@ osg::Group {
         }
       }
       Matrix {
-        10.00000 0.00000 0.00000 0.00000
-        0.00000 10.00000 0.00000 0.00000
-        0.00000 0.00000 10.00000 0.00000
+        24.99999 0.00000 0.00000 0.00000
+        0.00000 24.99999 0.00000 0.00000
+        0.00000 0.00000 25.00000 0.00000
         0.00000 0.00000 0.00000 1.00000
       }
     }
