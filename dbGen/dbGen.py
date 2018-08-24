@@ -8,7 +8,7 @@ expDB = 'flyExperiments.db'
 project = 'DecisionGeometry'
 
 nPosts = 10
-distances = [1.0, 1.5, 2.0, 2.5]
+distances = [1.0, 1.5, 2.0]
 
 # creates empty database
 def FirstGen():
