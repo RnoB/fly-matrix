@@ -8,7 +8,9 @@ expDB = 'flyExperiments.db'
 project = 'DecisionGeometry'
 
 nPosts = 10
-distances = [1.0, 1.5, 2.0]
+expPosts_min = 1
+expPosts_max = 1
+distances = [10.0]
 
 # creates empty database
 def FirstGen():
@@ -65,7 +67,7 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 		data = []
 		for k in range(0,nSwitch-1):
 			data.append([])
-			N = np.random.randint(2)+2
+			N = np.random.randint(expPosts_max-expPosts_min+1)+expPosts_min
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			for j in range(0,nPosts):
 				if j < N:
@@ -186,13 +188,13 @@ def main():
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 	if expType == 'distances':
 		for ang in range(1,7):	
-			for N in range(2,4):
+			for N in range(expPosts_min,expPosts_max+1):
 				# write your new stimuli
 				exp += 1
 				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 	if expType == 'angles':
-		for N in range(1,2):
+		for N in range(expPosts_min,expPosts_max+1):
 			for d in distances:
 				# write your new stimuli
 				exp += 1

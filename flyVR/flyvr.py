@@ -199,11 +199,11 @@ class MyExperiment(object):
                     self.cntr = 0
                 
                 for nPost in range(0,10):
-                    if distance(pos, self.postPosition[nPost,:], True) < 0.2:
+                    if distance(pos, self.postPosition[nPost,:], True) < 2.0:
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
                         break
-                if distance(pos, self.start_position, False) > 2.0:
+                if distance(pos, self.start_position, False) > 10.0:
                     self.observer.reset_to(**self.start_position)
                     self.cntr += 1
 
