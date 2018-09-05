@@ -203,7 +203,7 @@ class MyExperiment(object):
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
                         break
-                if distance(pos, self.start_position, False) > 10.0:
+                if distance(pos, self.start_position, False) > 5.0:
                     self.observer.reset_to(**self.start_position)
                     self.cntr += 1
 
