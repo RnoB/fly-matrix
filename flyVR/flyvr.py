@@ -209,7 +209,7 @@ class MyExperiment(object):
 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
-                output.write('%3.2f, %3.2f,%3.2f, %3.2f, %3.2f, %s\n' % (pos['x'], pos['y'], direc, self.cntr, t, str(nStimuli)))
+                output.write('%.8f, %.8f,%.4f, %d, %.8f, %s\n' % (pos['x'], pos['y'], direc, self.cntr, t, str(nStimuli)))
                 time.sleep(0.005)
 
 
