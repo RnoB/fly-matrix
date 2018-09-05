@@ -170,7 +170,7 @@ def main():
 	# WRITE NEW EXPTYPE IF YOU WANT DISTANCES OR ANGLES AS EXPERIMENTAL PARAMETER
 	
 	expType = 'angles'
-	tSwitch = 10
+	tSwitch = 5
 	nSwitch = 6
 	tExp = tSwitch*nSwitch   
 	nReplicates = 10
