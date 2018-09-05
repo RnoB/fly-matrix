@@ -171,7 +171,7 @@ def main():
 	
 	expType = 'angles'
 	tSwitch = 10
-	nSwitch = 9
+	nSwitch = 6
 	tExp = tSwitch*nSwitch   
 	nReplicates = 10
 
