@@ -10,7 +10,7 @@ project = 'DecisionGeometry'
 nPosts = 10
 expPosts_min = 1
 expPosts_max = 1
-distances = [8.0, 10.0, 12.0]
+distances = [5.0, 10.0]
 
 # creates empty database
 def FirstGen():
