@@ -73,6 +73,7 @@ class MyExperiment(object):
         # set starting position for stimuli
         self.rootPosition = np.zeros((1,2))
         self.postPosition = np.zeros((numberPost,2))
+        self.postDistance = 5.0
 
         # set starting position of fly
         self.start_position = {'x': 0.0, 'y': 0.0, 'z': -0.07}
@@ -203,7 +204,7 @@ class MyExperiment(object):
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
                         break
-                if distance(pos, self.start_position, False) > 5.0:
+                if distance(pos, self.start_position, False) > self.postDistance:
                     self.observer.reset_to(**self.start_position)
                     self.cntr += 1
 
@@ -230,8 +231,10 @@ class MyExperiment(object):
                 #Should be the name of the blender file
                 self.postPosition[nPost,:] = [1000,1000]
             else:
-                print(eval(data)['position'])
-                self.postPosition[nPost,:] = eval(data)['position']
+                dictData = eval(data)
+                print(dictData['position'])
+                self.postPosition[nPost,:] = dictData['position']
+                self.postDistance = dictData['distance']
             self.ds_proxy.move_node('Cylinder' + str(nPost), self.postPosition[nPost,0],  self.postPosition[nPost,1], 0)
             #print(self.postPosition)
         
