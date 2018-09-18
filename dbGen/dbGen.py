@@ -8,9 +8,10 @@ expDB = 'flyExperiments.db'
 project = 'DecisionGeometry'
 
 nPosts = 10
-expPosts_min = 1
-expPosts_max = 1
-distances = [5.0, 10.0]
+expPosts_min = 2
+expPosts_max = 3
+distances = [5.0]
+
 
 # creates empty database
 def FirstGen():
@@ -47,27 +48,37 @@ def FirstGen():
 	conn.close()
 
 
-
-
+# creates a single post fixation control
 def dataController():
 	data=[]
-	for j in range(0,10):
-		data.append('None')
+	for j in range(0,nPosts):
+		if j == 0:
+			r = distances[0]
+			theta = 2*np.pi*(np.random.randint(6)+1) / 6
+			x = r*np.cos(theta)
+			y = r*np.sin(theta)
+			dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : theta}
+		else:
+			dataStimuli = 'None'
+		data.append(str(dataStimuli))
 	return data 
 
 
-
-
+# define stimuli based on experimental condition
+# the expType parameter defines which parameter is randomised for a given fly
+# the other parameter is randomised between flies
 def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 	dataReplicates = []
 	dataControl = dataController()
 
-
 	if expType == 'nPosts':
 		data = []
-		for k in range(0,nSwitch-1):
+		# define stimuli nSwitch-2 times since we have two control stimuli - one in the beginning; other in the end
+		for k in range(0,nSwitch-2):
 			data.append([])
+			# pick random number of posts
 			N = np.random.randint(expPosts_max-expPosts_min+1)+expPosts_min
+			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			for j in range(0,nPosts):
 				if j < N:
@@ -78,43 +89,15 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
 				else:
 					dataStimuli = 'None'
-				data[-1].append(str(dataStimuli))
-		for k in range(0,nReplicates):
-			dataReplicates.append([])
-			dataReplicates[-1].append(dataControl)
-			print(data)
-			shuffle(data)
-			for dataStimilus  in data:
-				dataReplicates[-1].append(dataStimilus)
-
-	elif expType == 'distances':
-		data = []
-		for k in range(0,nSwitch-1):
-			data.append([])
-			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6 
-			for j in range(0,nPosts):
-				if j < N:
-					r = np.random.choice(distances)
-					theta = start_ang + j*2*np.pi*ang / (N*6)
-					x = r*np.cos(theta)
-					y = r*np.sin(theta)
-					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
-				else:
-					dataStimuli = 'None'
-				data[-1].append(str(dataStimuli))
-		for k in range(0,nReplicates):
-			dataReplicates.append([])
-			dataReplicates[-1].append(dataControl)
-			print(data)
-			shuffle(data)
-			for dataStimilus  in data:
-				dataReplicates[-1].append(dataStimilus)
-
+				data[-1].append(str(dataStimuli))	
 	elif expType == 'angles':
 		data = []
-		for k in range(0,nSwitch-1):
+		# define stimuli nSwitch-2 times since we have two control stimuli - one in the beginning; other in the end
+		for k in range(0,nSwitch-2):
 			data.append([])
-			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6 
+			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
+			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
+			# pick a random angle that will be the angle between successive posts
 			ang = np.random.randint(6)+1
 			for j in range(0,nPosts):
 				if j < N:
@@ -126,26 +109,28 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 				else:
 					dataStimuli = 'None'
 				data[-1].append(str(dataStimuli))
-		for k in range(0,nReplicates):
-			dataReplicates.append([])
-			dataReplicates[-1].append(dataControl)
-			print(data)
-			shuffle(data)
-			for dataStimilus  in data:
-				dataReplicates[-1].append(dataStimilus)
+	
+	# permute replicates before adding them to the database
+	# sandwich permutations between controls
+	for k in range(0,nReplicates):
+		dataReplicates.append([])
+		dataReplicates[-1].append(dataControl)
+		print(data)
+		shuffle(data)
+		for dataStimilus  in data:
+			dataReplicates[-1].append(dataStimilus)
+		dataReplicates[-1].append(dataControl)
 	
 	return dataReplicates
 
 
-
-
+# write defined stimuli to database
 def writeStimuli(cursor,projects,exp,nReplicate,tExp,tSwitch,nSwitch,data):
 
 	for perm in range(0, nReplicate):
 		for k in range(0, nSwitch):
 			values = [projects, exp, perm, tExp, tSwitch, nSwitch, k, str(data[perm][k][0]), str(data[perm][k][1]), str(data[perm][k][2]), str(data[perm][k][3]), str(data[perm][k][4]), str(data[perm][k][5]), str(data[perm][k][6]), str(data[perm][k][7]), str(data[perm][k][8]), str(data[perm][k][9])]
 			cursor.execute("INSERT INTO projects VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",values)
-
 
 
 # fill database created by FirstGen
@@ -167,11 +152,10 @@ def main():
 		exp = int(np.amax(expType))
 
 
-	# WRITE NEW EXPTYPE IF YOU WANT DISTANCES OR ANGLES AS EXPERIMENTAL PARAMETER
-	
+	# define expType based on what variable needs randomisation within individual i.e. your experimental parameter
 	expType = 'angles'
-	tSwitch = 5
-	nSwitch = 6
+	tSwitch = 3
+	nSwitch = 5
 	tExp = tSwitch*nSwitch   
 	nReplicates = 10
 
@@ -182,13 +166,6 @@ def main():
 	if expType == 'nPosts':
 		for d in distances:
 			for ang in range(1,7):
-				# write your new stimuli
-				exp += 1
-				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
-				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
-	if expType == 'distances':
-		for ang in range(1,7):	
-			for N in range(expPosts_min,expPosts_max+1):
 				# write your new stimuli
 				exp += 1
 				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
