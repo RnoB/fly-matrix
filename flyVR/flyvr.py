@@ -198,6 +198,7 @@ class MyExperiment(object):
                     self.observer.reset_to(**self.start_position)
                     self.updateStimuli(nStimuli)
                     self.cntr = 0
+                    time.sleep(1)
                 
                 for nPost in range(0,10):
                     if distance(pos, self.postPosition[nPost,:], True) < 1.0:
