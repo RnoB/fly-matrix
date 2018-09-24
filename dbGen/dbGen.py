@@ -98,7 +98,9 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			# pick a random angle that will be the angle between successive posts
-			ang = np.random.randint(6)+1
+			ang = np.random.randint(3)+1
+			if ang == 3:
+				ang = 6
 			for j in range(0,nPosts):
 				if j < N:
 					r = d

@@ -204,10 +204,12 @@ class MyExperiment(object):
                     if distance(pos, self.postPosition[nPost,:], True) < 1.0:
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
+                        time.sleep(1)
                         break
                 if distance(pos, self.start_position, False) > self.postDistance:
                     self.observer.reset_to(**self.start_position)
                     self.cntr += 1
+                    time.sleep(1)
 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
