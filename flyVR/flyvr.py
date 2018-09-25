@@ -183,10 +183,10 @@ class MyExperiment(object):
                 t = time.time() - t0
                 sl_t = time.time() - sl_t0
 
-                # if sl_t < 2:
-                #     self.observer.velocity = 0.0
-                # else:
-                #     self.observer.velocity = 0.15
+                if sl_t < 5:
+                    self.observer.velocity = 0.0
+                else:
+                    self.observer.velocity = 0.25
 
                 if t > self.tExp*60*.9 and lastMessage:
 
