@@ -170,6 +170,7 @@ class MyExperiment(object):
         
         nStimuli = 0
         t0 = time.time()
+        sl_t0 = time.time()
         
         lastMessage = True
 
@@ -180,6 +181,12 @@ class MyExperiment(object):
                 pos = self.observer.position
                 direc = self.observer.azimuth
                 t = time.time() - t0
+                sl_t = time.time() - sl_t0
+
+                # if sl_t < 2:
+                #     self.observer.velocity = 0.0
+                # else:
+                #     self.observer.velocity = 0.15
 
                 if t > self.tExp*60*.9 and lastMessage:
 
@@ -197,19 +204,19 @@ class MyExperiment(object):
                     nStimuli = nStimuli+1
                     self.observer.reset_to(**self.start_position)
                     self.updateStimuli(nStimuli)
+                    sl_t0 = time.time()
                     self.cntr = 0
-                    time.sleep(1)
                 
                 for nPost in range(0,10):
                     if distance(pos, self.postPosition[nPost,:], True) < 1.0:
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
-                        time.sleep(1)
+                        sl_t0 = time.time()
                         break
                 if distance(pos, self.start_position, False) > self.postDistance:
                     self.observer.reset_to(**self.start_position)
                     self.cntr += 1
-                    time.sleep(1)
+                    sl_t0 = time.time()
 
             #print "XYZ(%3.2f, %3.2f, %3.2f)" % (pos['x'], pos['y'], pos['z']), self.counter     
                 #print(t)  
