@@ -67,7 +67,7 @@ def dataController():
 # define stimuli based on experimental condition
 # the expType parameter defines which parameter is randomised for a given fly
 # the other parameter is randomised between flies
-def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
+def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, picked=[]):
 	dataReplicates = []
 	dataControl = dataController()
 
@@ -98,9 +98,11 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6):
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			# pick a random angle that will be the angle between successive posts
-			ang = np.random.randint(3)+1
-			if ang == 3:
-				ang = 6
+			ang = 0.0
+			while ang in picked or ang == 0.0:
+				ang = np.random.randint(3)+1
+			picked.append(ang)
+
 			for j in range(0,nPosts):
 				if j < N:
 					r = d
@@ -175,9 +177,10 @@ def main():
 	if expType == 'angles':
 		for N in range(expPosts_min,expPosts_max+1):
 			for d in distances:
+				picked_angs = []
 				# write your new stimuli
 				exp += 1
-				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
+				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang, picked=picked_angs)
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 
 
