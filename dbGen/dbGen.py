@@ -1,4 +1,5 @@
 import sqlite3
+import itertools
 import numpy as np
 from random import shuffle
 
@@ -8,8 +9,9 @@ expDB = 'flyExperiments.db'
 project = 'DecisionGeometry'
 
 nPosts = 10
-expPosts_min = 2
-expPosts_max = 3
+
+posts = range(2,4)
+posts = list(itertools.chain.from_iterable(itertools.repeat(x, 5) for x in posts))
 distances = [5.0]
 
 
@@ -77,7 +79,7 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 		for k in range(0,nSwitch-2):
 			data.append([])
 			# pick random number of posts
-			N = np.random.randint(expPosts_max-expPosts_min+1)+expPosts_min
+			N = np.random.randint(np.max(posts)-np.min(posts)+1)+np.min(posts)
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			for j in range(0,nPosts):
@@ -100,7 +102,7 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 			# pick a random angle that will be the angle between successive posts
 			ang = 0.0
 			while ang in picked or ang == 0.0:
-				ang = np.random.randint(3)+1
+				ang = np.random.randint(6)+1
 			picked.append(ang)
 
 			for j in range(0,nPosts):
@@ -175,7 +177,7 @@ def main():
 				data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang)
 				writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 	if expType == 'angles':
-		for N in range(expPosts_min,expPosts_max+1):
+		for N in posts:
 			for d in distances:
 				picked_angs = []
 				# write your new stimuli
