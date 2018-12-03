@@ -14,7 +14,7 @@ from tetheredvr.proxy import JSONStimulusOSGController
 from tetheredvr.observers import SimulatedObserver, CarModelSocketObserver
 import emailer
 
-replication = 4
+replication = 1
 
 project = 'DecisionGeometry'
 experimenter = 'VHS'

@@ -10,7 +10,7 @@ project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(2,4)
+posts = range(1,2)
 posts = list(itertools.chain.from_iterable(itertools.repeat(x, 5) for x in posts))
 distances = [5.0]
 
