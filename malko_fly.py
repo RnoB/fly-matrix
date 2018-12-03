@@ -35,8 +35,8 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
     # connect a cursor that goes through the experiment database
     cursorExperiment = conn2.cursor()
 
-    # pick a random experiment from specified project
-    cursorExperiment.execute("Select expId from experiments where project = ?",('DecisionGeometry',))
+    # pick experiments from specified project
+    cursorExperiment.execute("Select expId from experiments where project = ? and exp > ? and exp <= ?",('DecisionGeometry',  (nPosts-2)*4, (nPosts-1)*4))
     fetched = cursorExperiment.fetchall()
     print('fetched : ' + str(fetched))
 
@@ -68,7 +68,7 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
         df = tmp if uuid == 0 else pd.concat([df,tmp])
         rot_post0.append([eval(dataDict0[uuid][1][0])['distance'], 0.0])
 
-        cursorProject.execute("Select post1 from projects where project = ? and exp < ?",('DecisionGeometry', 5))
+        cursorProject.execute("Select post1 from projects where project = ? and exp > ? and exp <= ?",('DecisionGeometry', (nPosts-2)*4, (nPosts-1)*4))
         for a in np.unique(cursorProject.fetchall()):
             if a != 'None' and eval(a)['angle'] not in angles:
                 angles.append(eval(a)['angle'])
