@@ -23,7 +23,6 @@ projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyProjects.db'
 expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyExperiments.db'
 pathData = '/home/flyvr/flyvr/data/'
 
-expTime = 120
 running = 1
 numberPost = 10
 
