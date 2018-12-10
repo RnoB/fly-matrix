@@ -10,10 +10,11 @@ project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(1,2)
-posts = list(itertools.chain.from_iterable(itertools.repeat(x, 5) for x in posts))
-distances = [5.0]
-
+posts = range(2,4)
+posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in posts))
+distances = [7.0]
+angles2 = [np.pi/3, 7*np.pi/18, np.pi]
+angles3 = [np.pi/6, 4*np.pi/18, 2*np.pi/3]
 
 # creates empty database
 def FirstGen():
@@ -100,18 +101,19 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
 			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
 			# pick a random angle that will be the angle between successive posts
-			ang = 0.0
-			while ang in picked or ang == 0.0:
-				ang = np.random.randint(6)+1
+			ang = -1.0
+			while ang in picked or ang < 0.0:
+				ang = np.random.randint(3)
 			picked.append(ang)
 
 			for j in range(0,nPosts):
 				if j < N:
 					r = d
-					theta = start_ang + j*2*np.pi*ang / (N*6)
+					angle = angles2[ang] if N == 2 else angles3[ang]
+					theta = start_ang + j*angle
 					x = r*np.cos(theta)
 					y = r*np.sin(theta)
-					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : 2*np.pi*ang / (N*6)}
+					dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : angle}
 				else:
 					dataStimuli = 'None'
 				data[-1].append(str(dataStimuli))
@@ -163,7 +165,7 @@ def main():
 	tSwitch = 3
 	nSwitch = 5
 	tExp = tSwitch*nSwitch   
-	nReplicates = 10
+	nReplicates = 5
 
 	N = 2
 	d = 1.0
