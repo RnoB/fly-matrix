@@ -148,7 +148,7 @@ osg::Group {
                             MAG_FILTER LINEAR
                             Image TRUE {
                               UniqueID 545
-                              FileName "textures/stripes.jpg"
+                              FileName "textures/stripes2.png"
                               WriteHint 0 2
                             }
                           }
@@ -661,7 +661,7 @@ osg::Group {
             1.00000 0.00000 0.00000 0.00000
             0.00000 1.00000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
-            0.00000 0.00000 0.00000 1.00000
+            5.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
@@ -802,7 +802,7 @@ osg::Group {
                             MAG_FILTER LINEAR
                             Image TRUE {
                               UniqueID 546
-                              FileName "textures/black.png"
+                              FileName "textures/stripes.png"
                               WriteHint 0 2
                             }
                           }
@@ -1315,7 +1315,7 @@ osg::Group {
             1.00000 0.00000 0.00000 0.00000
             0.00000 1.00000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
-            0.00000 0.00000 0.00000 1.00000
+            0.00000 5.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
@@ -1456,7 +1456,7 @@ osg::Group {
                             MAG_FILTER LINEAR
                             Image TRUE {
                               UniqueID 547
-                              FileName "textures/black.png"
+                              FileName "textures/stripes_v.png"
                               WriteHint 0 2
                             }
                           }
@@ -1969,7 +1969,7 @@ osg::Group {
             1.00000 0.00000 0.00000 0.00000
             0.00000 1.00000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
-            0.00000 0.00000 0.00000 1.00000
+            -10.00000 0.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
@@ -2110,7 +2110,7 @@ osg::Group {
                             MAG_FILTER LINEAR
                             Image TRUE {
                               UniqueID 548
-                              FileName "textures/black.png"
+                              FileName "textures/stripes_h.png"
                               WriteHint 0 2
                             }
                           }
@@ -2623,7 +2623,7 @@ osg::Group {
             1.00000 0.00000 0.00000 0.00000
             0.00000 1.00000 0.00000 0.00000
             0.00000 0.00000 1.00000 0.00000
-            0.00000 0.00000 0.00000 1.00000
+            0.00000 -10.00000 0.00000 1.00000
           }
         }
         osg::MatrixTransform {
