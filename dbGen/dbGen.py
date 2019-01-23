@@ -10,9 +10,10 @@ project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(2,4)
+posts = range(1,2)
 posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in posts))
 distances = [7.0]
+start_ang_split = 8
 angles2 = [np.pi/3, 7*np.pi/18, np.pi]
 angles3 = [np.pi/6, 4*np.pi/18, 2*np.pi/3]
 
@@ -82,7 +83,7 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 			# pick random number of posts
 			N = np.random.randint(np.max(posts)-np.min(posts)+1)+np.min(posts)
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
-			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
+			start_ang = 2*np.pi*(np.random.randint(start_ang_split)+1) / start_ang_split
 			for j in range(0,nPosts):
 				if j < N:
 					r = d
@@ -99,7 +100,7 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 		for k in range(0,nSwitch-2):
 			data.append([])
 			# pick a random start angle (one of six angles obtained by splitting angle of symmetry for N posts in six parts)
-			start_ang = 2*np.pi*(np.random.randint(6)+1) / 6
+			start_ang = 2*np.pi*(np.random.randint(start_ang_split)+1) / start_ang_split
 			# pick a random angle that will be the angle between successive posts
 			ang = -1.0
 			while ang in picked or ang < 0.0:
