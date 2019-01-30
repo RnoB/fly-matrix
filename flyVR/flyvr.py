@@ -207,7 +207,7 @@ class MyExperiment(object):
                     self.cntr = 0
                 
                 for nPost in range(0,10):
-                    if distance(pos, self.postPosition[nPost,:], True) < 0.1:
+                    if distance(pos, self.postPosition[nPost,:], True) < 0.5:
                         self.observer.reset_to(**self.start_position)
                         self.cntr += 1
                         sl_t0 = time.time()
