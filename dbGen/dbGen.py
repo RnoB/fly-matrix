@@ -10,9 +10,9 @@ project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(1,2)
+posts = range(2,4)
 posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in posts))
-distances = [7.0]
+distances = [5.0]
 start_ang_split = 8
 angles2 = [np.pi/3, 7*np.pi/18, np.pi]
 angles3 = [np.pi/6, 4*np.pi/18, 2*np.pi/3]
