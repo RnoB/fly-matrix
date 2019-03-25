@@ -36,7 +36,7 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
     cursorExperiment = conn2.cursor()
 
     # pick experiments from specified project
-    cursorExperiment.execute("Select expId from experiments where project = ? and exp > ? and exp <= ?",('DecisionGeometry',  (nPosts-2)*4, (nPosts-1)*4))
+    cursorExperiment.execute("Select expId from experiments where project = ? and exp >= ? and exp < ?",('DecisionGeometry',  (nPosts-2)*10, (nPosts-1)*10))
     fetched = cursorExperiment.fetchall()
     print('fetched : ' + str(fetched))
 
@@ -68,7 +68,7 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
         df = tmp if uuid == 0 else pd.concat([df,tmp])
         rot_post0.append([eval(dataDict0[uuid][1][0])['distance'], 0.0])
 
-        cursorProject.execute("Select post1 from projects where project = ? and exp > ? and exp <= ?",('DecisionGeometry', (nPosts-2)*4, (nPosts-1)*4))
+        cursorProject.execute("Select post1 from projects where project = ? and exp >= ? and exp < ?",('DecisionGeometry', (nPosts-2)*10, (nPosts-1)*10))
         for a in np.unique(cursorProject.fetchall()):
             if a != 'None' and eval(a)['angle'] not in angles:
                 angles.append(eval(a)['angle'])
@@ -126,8 +126,34 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
                 rp2x,rp2y = rotate(np.array((df.loc[(df['uuid'] == uuid) & (df['nStimuli'] == i),'post2_x'],df.loc[(df['uuid'] == uuid) & (df['nStimuli'] == i),'post2_y'])), ang)
                 df.loc[(df['uuid'] == uuid) & (df['nStimuli'] == i),'rotated_post2_x'] = np.squeeze(np.asarray(rp2x.T))
                 df.loc[(df['uuid'] == uuid) & (df['nStimuli'] == i),'rotated_post2_y'] = np.squeeze(np.asarray(rp2y.T))
-            
+          
     return df, fetched, angles
+
+def distance_filter_trajectories(distance, df):
+	p0_dist = np.sqrt((df['x'] - df['post0_x'])**2 + (df['y'] - df['post0_y'])**2)
+	p1_dist = np.sqrt((df['x'] - df['post1_x'])**2 + (df['y'] - df['post1_y'])**2)
+	df['dmin'] = np.nanmin([p0_dist, p1_dist], axis=0)
+
+	tmax = df.loc[:,['uuid', 'nStimuli', 'event', 't']]
+	tmax = tmax.groupby(['uuid', 'nStimuli', 'event']).max().reset_index()
+	dmin = df.loc[:,['uuid', 'nStimuli', 'event', 't', 'dmin']]
+
+	dists = pd.merge(tmax, dmin, how='left')
+	dists = dists[dists['dmin'] < distance]
+	dists = dists.loc[:,['uuid', 'nStimuli', 'event']]
+
+	df = pd.merge(dists, df, how='left')
+
+	for i1, u in enumerate(np.unique(df['uuid'])):
+	    tmp = df[df['uuid'] == u]
+	    for i2, n in enumerate(np.unique(tmp['nStimuli'])):
+	        tmp2 = tmp[tmp['nStimuli'] == n]
+	        for i3, e in enumerate(np.unique(tmp2['event'])):
+	            df.loc[(df['uuid'] == u) & (df['nStimuli'] == n) & (df['event'] == e), 'uuid'] = i1
+	            df.loc[(df['uuid'] == u) & (df['nStimuli'] == n) & (df['event'] == e), 'nStimuli'] = i2
+	            df.loc[(df['uuid'] == u) & (df['nStimuli'] == n) & (df['event'] == e), 'event'] = i3
+
+	return df
 
 def get_malko_architecture(projectDB, expDB, nPosts, df, fetched, angles):
     # establish a connecttion to the project database
@@ -162,9 +188,10 @@ def get_malko_architecture(projectDB, expDB, nPosts, df, fetched, angles):
     for uuid in range(0,len(fetched)):
         cursorExperiment.execute("Select exp from experiments where expID = ?",(fetched[uuid][0],))
         exp = cursorExperiment.fetchall()
-        for n in range(0,np.max(nStimuli)+1):
+        nStim = len(np.unique(df.loc[df['uuid'] == uuid,'nStimuli']))
+        for n in range(0,nStim):
             stimuli = swarm.Swarm()
-            nEvents = len(np.unique(df.iloc[np.where((df['uuid'] == uuid) & (df['nStimuli'] == n))[0],4]))
+            nEvents = len(np.unique(df.loc[(df['uuid'] == uuid) & (df['nStimuli'] == n),'event']))
             for e in range(0,nEvents):
                 event = swarm.Swarm()
                 idx = np.where((uuids == uuid) & (nStimuli == n) & (events == e))[0]
