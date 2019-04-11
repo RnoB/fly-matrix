@@ -129,10 +129,14 @@ def preprocess_fly_data(dataDIR, projectDB, expDB, nPosts):
           
     return df, fetched, angles
 
-def distance_filter_trajectories(distance, df):
+def distance_filter_trajectories(distance, nPosts, df):
 	p0_dist = np.sqrt((df['x'] - df['post0_x'])**2 + (df['y'] - df['post0_y'])**2)
 	p1_dist = np.sqrt((df['x'] - df['post1_x'])**2 + (df['y'] - df['post1_y'])**2)
-	df['dmin'] = np.nanmin([p0_dist, p1_dist], axis=0)
+	if nPosts == 2:
+		df['dmin'] = np.nanmin([p0_dist, p1_dist], axis=0)
+	else:
+		p2_dist = np.sqrt((df['x'] - df['post2_x'])**2 + (df['y'] - df['post2_y'])**2)
+		df['dmin'] = np.nanmin([p0_dist, p1_dist, p2_dist], axis=0)
 
 	tmax = df.loc[:,['uuid', 'nStimuli', 'event', 't']]
 	tmax = tmax.groupby(['uuid', 'nStimuli', 'event']).max().reset_index()
