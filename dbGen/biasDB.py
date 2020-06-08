@@ -111,12 +111,14 @@ def defineStimuli(nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/3, picked=[]):
 		while ang in picked or ang < 0.0:
 			ang = np.random.randint(3)
 		picked.append(ang)
+		# randomise left-right post (so the grey post may appear on either side of the black post)
+		left = np.random.randint(2)
 
 		for j in range(0,nPosts):
 			if j < N:
 				r = d
 				angle = angles2[ang] if N == 2 else angles3[ang]
-				theta = start_ang + j*angle
+				theta = start_ang + j*angle if left == 0 else start_ang - j*angle
 				x = r*np.cos(theta)
 				y = r*np.sin(theta)
 				dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : angle}
