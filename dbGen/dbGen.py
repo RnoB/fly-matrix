@@ -34,7 +34,7 @@ project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(3,4)
+posts = range(2,4)
 posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in posts))
 distances = [5.0]
 start_ang_split = 8

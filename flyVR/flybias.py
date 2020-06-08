@@ -14,13 +14,13 @@ from tetheredvr.proxy import JSONStimulusOSGController
 from tetheredvr.observers import SimulatedObserver, CarModelSocketObserver
 import emailer
 
-replication = 3
+replication = 2
 
 project = 'DecisionGeometry'
 experimenter = 'VHS'
 
-projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyProjects.db'
-expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyExperiments.db'
+projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasProjects.db'
+expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasExperiments.db'
 pathData = '/home/flyvr/flyvr/data/'
 
 running = 1
