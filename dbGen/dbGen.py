@@ -15,7 +15,7 @@ posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in post
 distances = [5.0]
 start_ang_split = 8
 angles2 = [np.pi/3, 7*np.pi/18, np.pi]
-angles3 = [5*np.pi/18, 5*np.pi/18, 2*np.pi/3]
+angles3 = [3*np.pi/18, 4*np.pi/18, 2*np.pi/3]
 
 # creates empty database
 def FirstGen():
@@ -58,7 +58,7 @@ def dataController():
 	for j in range(0,nPosts):
 		if j == 0:
 			r = distances[0]
-			theta = 2*np.pi*(np.random.randint(6)+1) / 6
+			theta = 2*np.pi*(np.random.randint(start_ang_split)+1) / start_ang_split
 			x = r*np.cos(theta)
 			y = r*np.sin(theta)
 			dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : theta}
