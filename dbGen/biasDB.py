@@ -1,21 +1,45 @@
+#MIT License
+
+#Copyright (c) 2020 Renaud Bastien
+
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+
+#The above copyright notice and this permission notice shall be included in all
+#copies or substantial portions of the Software.
+
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#SOFTWARE.
+###########
+
+
 import sqlite3
 import itertools
 import numpy as np
 from random import shuffle
 
-projectDB = 'flyProjectsAsymmetric.db'
-expDB = 'flyExperimentsAsymmetric.db'
+projectDB = 'biasProjects.db'
+expDB = 'biasExperiments.db'
 
 project = 'DecisionGeometry'
 
 nPosts = 10
 
-posts = range(3,4)
+posts = range(2,3)
 posts = list(itertools.chain.from_iterable(itertools.repeat(x, 10) for x in posts))
 distances = [5.0]
 start_ang_split = 8
-n_angle = np.pi/9
-angles3 = [3*np.pi/18, 2*np.pi/9, 2*np.pi/3]
+angles2 = [np.pi/3, 7*np.pi/18, np.pi]
+angles3 = [3*np.pi/18, 4*np.pi/18, 2*np.pi/3]
 
 # creates empty database
 def FirstGen():
@@ -55,13 +79,15 @@ def FirstGen():
 # creates a single post fixation control
 def dataController():
 	data=[]
+	ctrl = np.random.randint(2)
+
 	for j in range(0,nPosts):
-		if j == 0:
+		if j == ctrl:
 			r = distances[0]
-			theta = 2*np.pi*(np.random.randint(6)+1) / 6
+			theta = 2*np.pi*(np.random.randint(start_ang_split)+1) / start_ang_split
 			x = r*np.cos(theta)
 			y = r*np.sin(theta)
-			dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : theta, 'right' : 0}
+			dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : theta}
 		else:
 			dataStimuli = 'None'
 		data.append(str(dataStimuli))
@@ -69,13 +95,11 @@ def dataController():
 
 
 # define stimuli based on experimental condition
-# the expType parameter defines which parameter is randomised for a given fly
 # the other parameter is randomised between flies
-def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, picked=[]):
+def defineStimuli(nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/3, picked=[]):
 	dataReplicates = []
 	dataControl = dataController()
 
-	
 	data = []
 	# define stimuli nSwitch-2 times since we have two control stimuli - one in the beginning; other in the end
 	for k in range(0,nSwitch-2):
@@ -87,22 +111,17 @@ def defineStimuli(expType, nSwitch, nReplicates=2, N=2, d=1.0, ang=np.pi/6, pick
 		while ang in picked or ang < 0.0:
 			ang = np.random.randint(3)
 		picked.append(ang)
-		# use random boolean to identify whether near angle is to the left or right of the centre post
-		right = np.random.randint(2)
+		# randomise left-right post (so the grey post may appear on either side of the black post)
+		left = np.random.randint(2)
 
 		for j in range(0,nPosts):
 			if j < N:
 				r = d
 				angle = angles2[ang] if N == 2 else angles3[ang]
-				theta = start_ang + j*angle
-				if right == 0 and j == 1:
-					theta = start_ang + n_angle
-				elif j == 2:
-					theta = start_ang + n_angle + angle
-				
+				theta = start_ang + j*angle if left == 0 else start_ang - j*angle
 				x = r*np.cos(theta)
 				y = r*np.sin(theta)
-				dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : angle, 'right' : right}
+				dataStimuli = {'position' : (x,y), 'distance' : r, 'angle' : angle}
 			else:
 				dataStimuli = 'None'
 			data[-1].append(str(dataStimuli))
@@ -139,14 +158,14 @@ def main():
 	# check the number of experiments in the project
 	cursorProject.execute("Select exp from projects where project = ? ",(project,))
 	fetched = cursorProject.fetchall()
-	expType = np.unique(fetched)
-	print(expType)
-	print(len(expType))
+	expDetails = np.unique(fetched)
+	print(expDetails)
+	print(len(expDetails))
 
-	if len(expType) == 0:
+	if len(expDetails) == 0:
 		exp = -1
 	else:
-		exp = int(np.amax(expType))
+		exp = int(np.amax(expDetails))
 
 
 	tSwitch = 3
@@ -156,15 +175,14 @@ def main():
 
 	N = 2
 	d = 1.0
-	ang = np.pi/6
+	ang = np.pi/3
 
-	
 	for N in posts:
 		for d in distances:
 			picked_angs = []
 			# write your new stimuli
 			exp += 1
-			data = defineStimuli(expType, nSwitch, nReplicates, N=N, d=d, ang=ang, picked=picked_angs)
+			data = defineStimuli(nSwitch, nReplicates, N=N, d=d, ang=ang, picked=picked_angs)
 			writeStimuli(cursorProject, project, exp, nReplicate = nReplicates, tExp = tExp, tSwitch = tSwitch, nSwitch = nSwitch, data=data)
 
 

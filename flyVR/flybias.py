@@ -1,27 +1,3 @@
-#MIT License
-
-#Copyright (c) 2020 Renaud Bastien
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
-###########
-
-
 import os
 import sys
 import datetime
@@ -38,13 +14,13 @@ from tetheredvr.proxy import JSONStimulusOSGController
 from tetheredvr.observers import SimulatedObserver, CarModelSocketObserver
 import emailer
 
-replication = 3
+replication = 2
 
 project = 'DecisionGeometry'
 experimenter = 'VHS'
 
-projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyProjects.db'
-expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/flyExperiments.db'
+projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasProjects.db'
+expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasExperiments.db'
 pathData = '/home/flyvr/flyvr/data/'
 
 running = 1
@@ -299,7 +275,7 @@ class MyExperiment(object):
 
 def main():
     # OSGT files need to be in /home/flyvr/flyvr/FreemooVR/data
-    ex = MyExperiment(osg_file='ten_post_stimulus.osgt')
+    ex = MyExperiment(osg_file='bias_stimulus.osgt')
 
     try:
         ex.experiment_start()
