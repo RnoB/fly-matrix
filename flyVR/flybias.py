@@ -16,7 +16,7 @@ import emailer
 
 replication = 2
 
-project = 'DecisionGeometry'
+project = 'DecisionBias'
 experimenter = 'VHS'
 
 projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasProjects.db'
@@ -84,7 +84,7 @@ class MyExperiment(object):
         self.getExperiment()
         # start every experiment with a no post condition
         self.updateStimuli(0)
-        emailer.twitStatus(self.expId,status = 0, t=self.tExp)
+        #emailer.twitStatus(self.expId,status = 0, t=self.tExp)
         self.running = True
         # event counter (number of times fly position is reset)
         self.cntr = 0
@@ -187,18 +187,18 @@ class MyExperiment(object):
                 else:
                     self.observer.velocity = 0.20
 
-                if t > self.tExp*60*.9 and lastMessage:
+                # if t > self.tExp*60*.9 and lastMessage:
 
-                    try:
-                        emailer.twitStatus(self.expId,status = 1, t=self.tExp*.1)
-                    except:
-                        pass
-                    lastMessage = False
+                    # try:
+                    #     emailer.twitStatus(self.expId,status = 1, t=self.tExp*.1)
+                    # except:
+                    #     pass
+                    # lastMessage = False
 
                 if t > self.tExp*60:
                     self.running = False
                     self.writeInDb()
-                    emailer.twitStatus(self.expId,status = 2, t=self.tExp)                   
+                    #emailer.twitStatus(self.expId,status = 2, t=self.tExp)                   
                 elif t > (nStimuli+1)*self.tSwitch*60:
                     nStimuli = nStimuli+1
                     self.observer.reset_to(**self.start_position)

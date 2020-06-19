@@ -30,7 +30,7 @@ from random import shuffle
 projectDB = 'biasProjects.db'
 expDB = 'biasExperiments.db'
 
-project = 'DecisionGeometry'
+project = 'DecisionBias'
 
 nPosts = 10
 
