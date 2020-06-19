@@ -17,7 +17,7 @@ import emailer
 replication = 2
 
 project = 'DecisionBias'
-experimenter = 'VHS'
+experimenter = 'JW'
 
 projectDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasProjects.db'
 expDB = '/home/flyvr/flyvr/fly-matrix/dbGen/biasExperiments.db'
